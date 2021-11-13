@@ -10,7 +10,7 @@
 - setup normal config and policies for the new user
 
 ## Usage:
- - Create a config.json file in the same directory as this script.
+- Create a config.json file in the same directory as this script.
 - Fill the config.json with your Emby server's information.
 ```
 {
@@ -18,4 +18,5 @@
     "api_key":"API_KEY"
 }
 ```
+- Uncomment the lines in the script to use the functions.
 ## And you are good to go !
