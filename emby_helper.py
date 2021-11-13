@@ -1,13 +1,12 @@
 import requests
 import json
 
-from requests.models import guess_json_utf
-
-# set the url
-url = "URL"
-
-# set the api key
-api_key = "API"
+# read the config file json
+with open('config.json') as json_data_file:
+    data = json.load(json_data_file)
+    # set the url and api key
+    url = data['url']
+    api_key = data['api_key']
 
 # set the api path
 api_path = "/emby/"
@@ -50,7 +49,7 @@ def create_a_user_by_name(name):
     return response_dict['Id']
 
 
-config = """{"AudioLanguagePreference": "","PlayDefaultAudioTrack": true,"SubtitleLanguagePreference": "","DisplayMissingEpisodes": false,"SubtitleMode": "Default","EnableLocalPassword": true,"OrderedViews": [],"LatestItemsExcludes": [],"MyMediaExcludes": [],"HidePlayedInLatest": true,"RememberAudioSelections": true,"RememberSubtitleSelections": true,"EnableNextEpisodeAutoPlay": true,"ResumeRewindSeconds": 0}"""
+config = """{"AudioLanguagePreference": "","PlayDefaultAudioTrack": true,"SubtitleLanguagePreference": "","DisplayMissingEpisodes": false,"SubtitleMode": "Default","EnableLocalPassword": true,"OrderedViews": [],"LatestItemsExcludes": [],"MyMediaExcludes": ["361063e308310389b1c7f504760a30f3"],"HidePlayedInLatest": true,"RememberAudioSelections": true,"RememberSubtitleSelections": true,"EnableNextEpisodeAutoPlay": true,"ResumeRewindSeconds": 0}"""
 policy = """{    "IsAdministrator": false,    "IsHidden": true,    "IsHiddenRemotely": true,    "IsHiddenFromUnusedDevices": true,    "IsDisabled": false,    "BlockedTags": [],    "IncludeTags": [],    "IsTagBlockingModeInclusive": false,    "EnableUserPreferenceAccess": true,    "AccessSchedules": [],    "BlockUnratedItems": [],    "EnableRemoteControlOfOtherUsers": false,    "EnableSharedDeviceControl": false,    "EnableRemoteAccess": true,    "EnableLiveTvManagement": false,    "EnableLiveTvAccess": true,    "EnableMediaPlayback": true,    "EnableAudioPlaybackTranscoding": false,    "EnableVideoPlaybackTranscoding": false,    "EnablePlaybackRemuxing": false,    "EnableContentDeletion": false,    "EnableContentDeletionFromFolders": [],    "EnableContentDownloading": false,    "EnableSubtitleDownloading": false,    "EnableSubtitleManagement": false,    "EnableSyncTranscoding": false,    "EnableMediaConversion": false,    "EnabledChannels": [],    "EnableAllChannels": true,    "EnabledFolders": [],    "EnableAllFolders": true,    "InvalidLoginAttemptCount": 0,    "EnablePublicSharing": true,    "RemoteClientBitrateLimit": 0,    "AuthenticationProviderId": "Emby.Server.Implementations.Library.DefaultAuthenticationProvider",    "ExcludedSubFolders": [],    "SimultaneousStreamLimit": 0,    "EnabledDevices": [],    "EnableAllDevices": true  }"""
 password = """{"Id": insert,"CurrentPw": "string","NewPw": "string","ResetPassword": true}"""
 

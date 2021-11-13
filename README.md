@@ -10,13 +10,12 @@
 - setup normal config and policies for the new user
 
 ## Usage:
- - Change the URL to your Emby server address (with port if not 80)
- - Change the API to your Emby server API key
+ - Create a config.json file in the same directory as this script.
+- Fill the config.json with your Emby server's information.
 ```
-# set the url
-url = "URL"
-
-# set the api key
-api_key = "API"
+{
+    "url":"URL",
+    "api_key":"API_KEY"
+}
 ```
 ## And you are good to go !
