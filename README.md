@@ -10,6 +10,7 @@
 - Setup normal config and policies for the new user
 
 ## Usage:
+- Git clone this project to your local
 - Create a config.json file in the same directory as this script.
 - Fill the config.json with your Emby server's information.
 ```
