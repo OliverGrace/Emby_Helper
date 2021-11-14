@@ -6,8 +6,8 @@
 - Create a new user
 - Delete a user
 - Clear a user's password
-- get user's id from username
-- setup normal config and policies for the new user
+- Get user's id from username
+- Setup normal config and policies for the new user
 
 ## Usage:
 - Create a config.json file in the same directory as this script.
